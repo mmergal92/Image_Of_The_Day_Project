@@ -1,0 +1,30 @@
+body{
+background-color: antiquewhite;
+}
+h2{
+    font-family: 'Big Shoulders Inline Text', cursive;
+    font-size: 60px;
+    /* font-family: 'Open Sans'; sans-serif; */
+}
+.container{
+    height: 400px;
+    width: 400px;
+    text-align: center;
+}
+.image{
+    height: 200px;
+    width: 200px;
+    box-align: center;
+}
+.title{
+    font-weight: 300;
+    font-style: italic;
+}
+.first{
+    background-color: cadetblue;
+    color: white;
+}
+.second{
+    background-color: rosybrown;
+    color: white;
+}
