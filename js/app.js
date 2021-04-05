@@ -9,8 +9,8 @@ const objectDegIdArray = [436155, 438817, 436157, 436121, 436144, 436126, 436141
 const objectSeuIdArray = [437654, 437658, 459191, 459116, 437655, 339751, 437656, 437659, 438123, 437657];
 
 const getData = () => {
-    const $container = $('<div class = items>')
-    $('.items').remove()
+    const $container = $('<div id = items>')
+    $('#items').remove()
     // console.log("this works")
     $.ajax({
         url: baseURL + currentId,
@@ -19,9 +19,8 @@ const getData = () => {
     //   alert("Retrieved records from the dataset!");
       console.log(data);
         $container.html(`
-        <h3> ${data.artistDisplayName} </h3>
-        <h4> ${data.artistNationality + " " + data.artistRole}</h4>
-        <h4 class = title> ${data.title}</h4>
+        <h3 class = title> ${data.title}</h4>
+        <h4> ${data.medium + ", " + data.objectDate}</h4>
         `)
         const $img = $('<img>').attr('src', data.primaryImage)
         $img.addClass('image')
@@ -34,49 +33,59 @@ const getData = () => {
 })
 }
 
-
 $(()=>{
 const $firstButton = $(".first")
 const $secondButton = $(".second")
 const $thirdButton = $(".third")
 const $fourthButton = $(".fourth")
 const $fifthButton = $(".fifth")
+const $secondContainer = $('.second-container')
+let $text1 = $('<h2>').text("Vincent van Gogh: Dutch Artist")
+let $text2 = $('<h2>').text("Paul Cezanne: French Artist")
+let $text3 = $('<h2>').text("Edouard Manet: French Artist")
+let $text4 = $('<h2>').text("Edgar Degas: French Artist")
+let $text5 = $('<h2>').text("Georges Seurat: French Artist")
 
     const artistVan = (event) => {
-        console.log ("it works")
+        // console.log ("it works")
         event.preventDefault();
+        $secondContainer.empty().append($text1);
     for (let i=0; i <objectVanIdArray.length; i++){
         currentId = objectVanIdArray[i];
         getData();
     }
     }
     const artistCez = (event) => {
-        console.log ("it works")
+        // console.log ("it works")
         event.preventDefault();
+        $secondContainer.empty().append($text2);
     for (let i=0; i <objectCezIdArray.length; i++){
         currentId = objectCezIdArray[i];
         getData()
     }
     }
     const artistMan = (event) => {
-        console.log ("it works")
+        // console.log ("it works")
         event.preventDefault();
+        $secondContainer.empty().append($text3);
     for (let i=0; i <objectManIdArray.length; i++){
         currentId = objectManIdArray[i];
         getData();
     }
     }
     const artistDeg = (event) => {
-        console.log ("it works")
+        // console.log ("it works")
         event.preventDefault();
+        $secondContainer.empty().append($text4);
     for (let i=0; i <objectDegIdArray.length; i++){
         currentId = objectDegIdArray[i];
         getData();
     }
     }
     const artistSeu = (event) => {
-        console.log ("it works")
+        // console.log ("it works")
         event.preventDefault();
+        $secondContainer.empty().append($text5);
     for (let i=0; i <objectSeuIdArray.length; i++){
         currentId = objectSeuIdArray[i];
         getData();
