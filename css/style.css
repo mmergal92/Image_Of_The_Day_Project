@@ -1,26 +1,48 @@
 body{
-background-color: #f3f0eb;
+background-color: #f9f6f4;
 }
-h2{
+h1{
     font-family: 'Big Shoulders Inline Text', cursive;
     font-size: 60px;
-    color: #2C3849;
+    color: #142239;
+    text-align: center;
     /* font-family: 'Open Sans'; sans-serif; */
 }
 p{
     color: #A45848;
+    text-align: center;
+}
+h2{
+    padding: 30px;
+    text-align: center;
 }
 .container{
-    height: 400px;
-    width: 400px;
-    text-align: center;
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+h3{
+text-align: center;
+}
+h4{
+text-align: center;
+}
+#items{
+    /* padding: 15px; */
+    border: 1px solid black;
 }
 .image{
     height: 200px;
     width: 200px;
-    box-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 button{
+    display: inline-block;
+    /* align-items: center;
+    vertical-align: middle;
+    text-align: center; */
     padding: 10px;
     border: none;
     border-radius: 10px;
@@ -31,22 +53,22 @@ button{
     font-style: italic;
 }
 .first{
-    background-color: #893A30;
+    background-color: #1C6D83;
     color: white;
 }
 .second{
-    background-color: #264C3D;
+    background-color: #142239;
     color: white;
 }
 .third{
-    background-color:#9E7269;
+    background-color:#1C6D83;
     color: white;
 }
 .fourth{
-    background-color: #2C3849;
+    background-color: #142239;
     color: white;
 }
 .fifth{
-    background-color: #370718;
+    background-color: #1C6D83;
     color: white
 }
