@@ -45,11 +45,14 @@ let $text2 = $('<h2>').text("Paul Cezanne: French Artist")
 let $text3 = $('<h2>').text("Edouard Manet: French Artist")
 let $text4 = $('<h2>').text("Edgar Degas: French Artist")
 let $text5 = $('<h2>').text("Georges Seurat: French Artist")
+let $nextButton = $('<button>').text("Next")
+let $prevButton = $('<button>').text("Previous")
 
     const artistVan = (event) => {
         // console.log ("it works")
         event.preventDefault();
-        $secondContainer.empty().append($text1);
+        $secondContainer.empty().append($text1, $nextButton, $prevButton);
+        // $secondContainer.append()
     for (let i=0; i <objectVanIdArray.length; i++){
         currentId = objectVanIdArray[i];
         getData();
@@ -58,7 +61,7 @@ let $text5 = $('<h2>').text("Georges Seurat: French Artist")
     const artistCez = (event) => {
         // console.log ("it works")
         event.preventDefault();
-        $secondContainer.empty().append($text2);
+        $secondContainer.empty().append($text2, $nextButton, $prevButton);
     for (let i=0; i <objectCezIdArray.length; i++){
         currentId = objectCezIdArray[i];
         getData()
@@ -67,7 +70,7 @@ let $text5 = $('<h2>').text("Georges Seurat: French Artist")
     const artistMan = (event) => {
         // console.log ("it works")
         event.preventDefault();
-        $secondContainer.empty().append($text3);
+        $secondContainer.empty().append($text3, $nextButton, $prevButton);
     for (let i=0; i <objectManIdArray.length; i++){
         currentId = objectManIdArray[i];
         getData();
@@ -76,7 +79,7 @@ let $text5 = $('<h2>').text("Georges Seurat: French Artist")
     const artistDeg = (event) => {
         // console.log ("it works")
         event.preventDefault();
-        $secondContainer.empty().append($text4);
+        $secondContainer.empty().append($text4, $nextButton, $prevButton);
     for (let i=0; i <objectDegIdArray.length; i++){
         currentId = objectDegIdArray[i];
         getData();
@@ -85,7 +88,7 @@ let $text5 = $('<h2>').text("Georges Seurat: French Artist")
     const artistSeu = (event) => {
         // console.log ("it works")
         event.preventDefault();
-        $secondContainer.empty().append($text5);
+        $secondContainer.empty().append($text5, $nextButton, $prevButton);
     for (let i=0; i <objectSeuIdArray.length; i++){
         currentId = objectSeuIdArray[i];
         getData();
