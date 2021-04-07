@@ -8,43 +8,63 @@ h1{
     text-align: center;
     /* font-family: 'Open Sans'; sans-serif; */
 }
-p{
-    color: #A45848;
-    text-align: center;
-}
 h2{
     padding: 30px;
     text-align: center;
 }
+p{
+    color: #A45848;
+    text-align: center;
+}
+h5{
+    text-decoration: dashed underline;
+    text-align: center;
+    cursor: pointer;
+}
+.tooltip{
+    margin: 8px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 10px;
+    color: #0B2631;
+    position: absolute;
+    text-decoration: none;
+    font-weight: 300;
+    z-index: 2;
+}
 .container{
+    display: flex;
     max-width: 1000px;
     position: relative;
     margin: auto;
 }
-h3{
-text-align: center;
-}
-h4{
-text-align: center;
+h3, h4{
+    text-align: center;
 }
 #items{
     /* padding: 15px; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .image{
-    height: 200px;
-    width: 200px;
+    width: 40%;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+.buttons{
+    text-align: center;
+    /* border: 3px #1C6D83; */
+}
 button{
     display: inline-block;
-    /* align-items: center;
+    align-items: center;
     vertical-align: middle;
-    text-align: center; */
+    text-align: center;
+    text-align: center;
     padding: 10px;
     border: none;
+    /* border: 3px #1C6D83; */
     border-radius: 10px;
     width: 8em;
 }
@@ -52,23 +72,23 @@ button{
     font-weight: 300;
     font-style: italic;
 }
-.first{
-    background-color: #1C6D83;
+.first, .second, .third, .fourth, .fifth{
+    background-image: linear-gradient(#18445D, #0B2631);
     color: white;
+    font-weight: 200;
 }
-.second{
-    background-color: #142239;
-    color: white;
+.next, .prev{
+    background-color: white;
+    color: #0B2631;
 }
-.third{
-    background-color:#1C6D83;
-    color: white;
+/* .next{
+    position: relative;
 }
-.fourth{
-    background-color: #142239;
-    color: white;
-}
-.fifth{
-    background-color: #1C6D83;
-    color: white
-}
+.prev{
+    position: relative;
+} */
+/* @media all and (min-width: 600px){
+    body{
+        display: flex;
+    }
+} */

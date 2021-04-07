@@ -27,17 +27,24 @@ const getData = () => {
         const $img = $('<img>').attr('src', data.primaryImage)
         $img.addClass('image')
         $container.append($img)
-        const $h5 = $('<h5>').text("Department name on hover.")
+        const $h5 = $('<h5>').text("Department Name")
         $container.append($h5)
         //Added the ToolTip feature to the page with functionality
+        const moveTooltip = function(event){
+            let tooltipX = event.pageX - 8;
+            let tooltipY = event.pageY + 8;
+            $('div.tooltip').css({top: tooltipY, left: tooltipX});
+        }
         const tooltip = function(){
             const $tooltipClass = $('<div class = "tooltip">');
+            $('div.tooltip').remove();
             $tooltipClass.html(`${data.department}`).appendTo($h5);
         }
         const hideTooltip = function (){
             $('div.tooltip').remove();
         }
         $h5.bind({
+            mousemove: moveTooltip,
             mouseenter: tooltip,
             mouseleave: hideTooltip,
         });
@@ -64,8 +71,8 @@ let $text2 = $('<h2>').text("Paul Cezanne: French Artist")
 let $text3 = $('<h2>').text("Edouard Manet: French Artist")
 let $text4 = $('<h2>').text("Edgar Degas: French Artist")
 let $text5 = $('<h2>').text("Georges Seurat: French Artist")
-let $nextButton = $('<button>').text("Next")
-let $prevButton = $('<button>').text("Previous")
+let $nextButton = $('<button>').addClass('next').text("Next")
+let $prevButton = $('<button>').addClass('prev').text("Previous")
 
 //each function below is used for each different artist to replace the information with the correct data. 
     const artistVan = (event) => {
