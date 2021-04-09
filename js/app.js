@@ -7,7 +7,9 @@ const objectCezIdArray = [435876, 435882, 435885, 435868, 435877, 435872, 437990
 const objectManIdArray = [438002, 436965, 436964, 436953, 436944, 436960, 436950, 436947, 436951, 436952];
 const objectDegIdArray = [436155, 438817, 436157, 436121, 436144, 436126, 436141, 436162, 436135, 436122];
 const objectSeuIdArray = [437654, 437658, 459191, 459116, 437655, 339751, 437656, 437659, 438123, 437657];
-
+// const searchResults = []
+// const searchData
+// https://collectionapi.metmuseum.org/public/collection/v1/search?q= + searchResults
 //getData function to access the JSON
 const getData = () => {
     //the items.remove() code removes the data when a new button is clicked so that the information is not added underneath the existing information, but instead replace it.
@@ -65,63 +67,184 @@ const $thirdButton = $(".third")
 const $fourthButton = $(".fourth")
 const $fifthButton = $(".fifth")
 const $secondContainer = $('.second-container')
+const $nextButton = $(".next")
+const $prevButton = $(".prev")
 //created variables for the text and was able to call different text with the different buttons.
 let $text1 = $('<h2>').text("Vincent van Gogh: Dutch Artist")
 let $text2 = $('<h2>').text("Paul Cezanne: French Artist")
 let $text3 = $('<h2>').text("Edouard Manet: French Artist")
 let $text4 = $('<h2>').text("Edgar Degas: French Artist")
 let $text5 = $('<h2>').text("Georges Seurat: French Artist")
-let $nextButton = $('<button>').addClass('next').text("Next")
-let $prevButton = $('<button>').addClass('prev').text("Previous")
+let currentPage = 0;
 
 //each function below is used for each different artist to replace the information with the correct data. 
-    const artistVan = (event) => {
-        // console.log ("it works")
+
+//Van Gogh Function
+const artistVan = (event) => {
+    // console.log ("it works")
+    event.preventDefault();
+    $secondContainer.empty().append($text1, $prevButton, $nextButton);
+    currentId = objectVanIdArray[0];
+    getData();
+    const nextPage = (event) => {
         event.preventDefault();
-        $secondContainer.empty().append($text1, $prevButton, $nextButton);
-        // $secondContainer.append()
-    for (let i=0; i <objectVanIdArray.length; i++){
-        currentId = objectVanIdArray[i];
-        getData();
+    if (currentPage < objectVanIdArray.length-1){
+        currentPage ++;
+    }else{
+        alert("This is the last page. Return to the first image.");
+        currentPage = 0;
     }
+    currentId =objectVanIdArray[currentPage]
+    getData();
     }
-    const artistCez = (event) => {
-        // console.log ("it works")
+    const prevPage = (event) =>{
+    event.preventDefault();
+    if (currentPage > 0 && currentPage < objectVanIdArray.length-1){
+        currentPage --;
+    }else{
+        alert ("This is the first page. You can't go further back")
+        currentPage = 0;
+    }
+    currentId =objectVanIdArray[currentPage]
+    getData();
+}
+$prevButton.click(prevPage);
+$nextButton.click(nextPage);
+}
+
+//Cezanne Function
+const artistCez = (event) => {
+    // console.log ("it works")
+    event.preventDefault();
+    $secondContainer.empty().append($text2, $prevButton, $nextButton);
+    currentId = objectCezIdArray[0];
+    getData();
+    const nextPage = (event) => {
         event.preventDefault();
-        $secondContainer.empty().append($text2, $prevButton, $nextButton);
-    for (let i=0; i <objectCezIdArray.length; i++){
-        currentId = objectCezIdArray[i];
-        getData()
+    if (currentPage < objectCezIdArray.length-1){
+        currentPage ++;
+    }else{
+        alert("This is the last page. Return to the first image.");
+        currentPage = 0;
     }
+    currentId =objectCezIdArray[currentPage]
+    getData();
     }
-    const artistMan = (event) => {
-        // console.log ("it works")
+    const prevPage = (event) =>{
+    event.preventDefault();
+    if (currentPage > 0 && currentPage < objectCezIdArray.length-1){
+        currentPage --;
+    }else{
+        alert ("This is the first page. You can't go further back")
+        currentPage = 0;
+    }
+    currentId =objectCezIdArray[currentPage]
+    getData();
+}
+$prevButton.click(prevPage);
+$nextButton.click(nextPage);
+}
+ 
+//Manet Function
+const artistMan = (event) => {
+    // console.log ("it works")
+    event.preventDefault();
+    $secondContainer.empty().append($text3, $prevButton, $nextButton);
+    currentId = objectManIdArray[0];
+    getData();
+    const nextPage = (event) => {
         event.preventDefault();
-        $secondContainer.empty().append($text3, $prevButton, $nextButton);
-    for (let i=0; i <objectManIdArray.length; i++){
-        currentId = objectManIdArray[i];
-        getData();
+    if (currentPage < objectManIdArray.length-1){
+        currentPage ++;
+    }else{
+        alert("This is the last page. Return to the first image.");
+        currentPage = 0;
     }
+    currentId =objectManIdArray[currentPage]
+    getData();
     }
-    const artistDeg = (event) => {
-        // console.log ("it works")
+    const prevPage = (event) =>{
+    event.preventDefault();
+    if (currentPage > 0 && currentPage < objectManIdArray.length-1){
+        currentPage --;
+    }else{
+        alert ("This is the first page. You can't go further back")
+        currentPage = 0;
+    }
+    currentId =objectManIdArray[currentPage]
+    getData();
+}
+$prevButton.click(prevPage);
+$nextButton.click(nextPage);
+}
+
+//Degas Function
+const artistDeg = (event) => {
+    // console.log ("it works")
+    event.preventDefault();
+    $secondContainer.empty().append($text4, $prevButton, $nextButton);
+    currentId = objectDegIdArray[0];
+    getData();
+    const nextPage = (event) => {
         event.preventDefault();
-        $secondContainer.empty().append($text4, $prevButton, $nextButton);
-    for (let i=0; i <objectDegIdArray.length; i++){
-        currentId = objectDegIdArray[i];
-        getData();
+    if (currentPage < objectDegIdArray.length-1){
+        currentPage ++;
+    }else{
+        alert("This is the last page. Return to the first image.");
+        currentPage = 0;
     }
+    currentId =objectDegIdArray[currentPage]
+    getData();
     }
-    const artistSeu = (event) => {
-        // console.log ("it works")
+    const prevPage = (event) =>{
+    event.preventDefault();
+    if (currentPage > 0 && currentPage < objectDegIdArray.length-1){
+        currentPage --;
+    }else{
+        alert ("This is the first page. You can't go further back")
+        currentPage = 0;
+    }
+    currentId =objectDegIdArray[currentPage]
+    getData();
+}
+$prevButton.click(prevPage);
+$nextButton.click(nextPage);
+}
+
+// Seurat Function
+const artistSeu = (event) => {
+    // console.log ("it works")
+    event.preventDefault();
+    $secondContainer.empty().append($text5, $prevButton, $nextButton);
+    currentId = objectSeuIdArray[0];
+    getData();
+    const nextPage = (event) => {
         event.preventDefault();
-        $secondContainer.empty().append($text5, $prevButton, $nextButton);
-    for (let i=0; i <objectSeuIdArray.length; i++){
-        currentId = objectSeuIdArray[i];
-        getData();
+    if (currentPage < objectSeuIdArray.length-1){
+        currentPage ++;
+    }else{
+        alert("This is the last page. Return to the first image.");
+        currentPage = 0;
     }
-    }   
-    //calling all functions on the buttons below.
+    currentId =objectSeuIdArray[currentPage]
+    getData();
+    }
+    const prevPage = (event) =>{
+    event.preventDefault();
+    if (currentPage > 0 && currentPage < objectSeuIdArray.length-1){
+        currentPage --;
+    }else{
+        alert ("This is the first page. You can't go further back")
+        currentPage = 0;
+    }
+    currentId =objectSeuIdArray[currentPage]
+    getData();
+}
+$prevButton.click(prevPage);
+$nextButton.click(nextPage);
+}  
+
+//calling all functions on the buttons below.
 $firstButton.click(artistVan);
 $secondButton.click(artistCez);
 $thirdButton.click(artistMan);
