@@ -1,8 +1,8 @@
 # Image of the Day Project #
 
-### The live site can be accessed here: LINK HERE.
+### The live site can be accessed here: index.html
 
-![Image of My Project](/images/ImageOfSite.png)
+![Image of My Project](file:///Users/mariamergal/Desktop/General_Assembly/Projects/Image_API_Project/images/SampleImageOfTheDay.png)
 
 #### For this project, I decided to connect to the Metropolitan Museum of Art API. My goal was to link the API and be able to pull the image and information about the works of art from each artist. 
 
